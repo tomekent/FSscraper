@@ -20,11 +20,10 @@ else:
 	date = sys.argv[2]
 	yest = datetime.datetime(2013, 1, 14, 0, 9)
 	
-	newtime = datetime.strptime('%02.f-%02.f-%02.f' %( yest.year, yest.month, yest.day) + ' ' + oldtime,'%Y-%m-%d %H:%M %p')
 # Set the time periods to query
 queryTimes = ['3','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
 
-outfile = 'FSScrape_%s.csv' % airport
+outfile = 'Data/FSScrape_%s.csv' % airport
 output = csv.writer(open(outfile, 'w'), delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
 for idqt, qT in enumerate(queryTimes):
