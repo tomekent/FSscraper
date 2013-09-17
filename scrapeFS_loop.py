@@ -20,7 +20,7 @@ def Scrape(IATA):
 	output = csv.writer(open(outfile, 'w'), delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 	
 	#Add a few header to the urlrequest
-	headers = {
+	getheaders = {
 	    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.65 Safari/537.36',
 	    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 		'Host' : 'www.flightstats.com',
@@ -29,7 +29,7 @@ def Scrape(IATA):
 	}
 	
 	for idqt, qT in enumerate(queryTimes):
-		page = requests.get('http://www.flightstats.com/go/FlightStatus/flightStatusByAirport.do?airportCode=%s&airportQueryDate=%s&airportQueryTime=%s&airportQueryType=0&queryNext=false&queryPrevious=false&sortField=3&airportToFilter=--+All+Airports+--&codeshareDisplay=0&airlineToFilter=--+All+Airlines+--' % (airport, date, qT), headers)
+		page = requests.get('http://www.flightstats.com/go/FlightStatus/flightStatusByAirport.do?airportCode=%s&airportQueryDate=%s&airportQueryTime=%s&airportQueryType=0&queryNext=false&queryPrevious=false&sortField=3&airportToFilter=--+All+Airports+--&codeshareDisplay=0&airlineToFilter=--+All+Airlines+--' % (airport, date, qT), headers = getheaders)
 		tree = html.fromstring(page.text)
 		tbl = tree.xpath('//td[@id="mainAreaLeftColumn"]/table/tr')
 
