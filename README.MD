@@ -1,6 +1,6 @@
 ########## README ###########
-## 	FLIGHT DELAY SCRAPER   ##
-## 		Tom Kent 2013	       ##
+    FLIGHT DELAY SCRAPER
+      Tom Kent 2013
 #############################
 
 
