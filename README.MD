@@ -4,6 +4,9 @@
 
 ***
 
+## Requirements
+Python
+lxml
 
 Used to get data from FLightStats.com, namely the delay data.
 Only get free access to non-historical data, ie the last 24 hours.
